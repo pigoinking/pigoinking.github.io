@@ -97,12 +97,9 @@ def build():
         for svg_file in svg_files:
             svg_content = svg_file.read_text()
             # Make SVG scale to container width
-            svg_content = re.sub(
-                r'<svg\b',
-                '<svg style="width:100%;height:auto;display:block"',
-                svg_content,
-                count=1,
-            )
+            # Remove fixed width/height attrs so CSS controls sizing
+            svg_content = re.sub(r'\s+width="[^"]*"', '', svg_content, count=1)
+            svg_content = re.sub(r'\s+height="[^"]*"', '', svg_content, count=1)
             svg_blocks.append(svg_content)
             svg_file.unlink()
 
@@ -112,10 +109,27 @@ def build():
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{title}</title>
-  <link rel="stylesheet" href="../../style.css">
+  <style>
+    body {{ margin: 0; padding: 0; background: #fdfdfd; }}
+    .note-nav {{
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 0.9rem;
+      padding: 0.75rem 0 0.5rem;
+      /* 30pt margin / 700pt page width */
+      margin-left: 4.3%;
+    }}
+    .note-nav a {{
+      color: #2563eb;
+      text-decoration: none;
+    }}
+    .note-nav a:hover {{
+      text-decoration: underline;
+    }}
+    svg {{ display: block; width: 100%; height: auto; }}
+  </style>
 </head>
 <body>
-  <nav class="note-nav"><a href="../../">&larr; Back to notes</a></nav>
+  <nav class="note-nav"><a href="../../">&lt; Back to notes</a></nav>
 {"".join(svg_blocks)}
 </body>
 </html>
