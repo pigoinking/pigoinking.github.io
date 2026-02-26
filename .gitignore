@@ -1,0 +1,26 @@
+# Ignore everything
+*
+
+# Allow directory traversal
+!*/
+
+# Project files
+!flake.nix
+!flake.lock
+!build.py
+!.gitignore
+
+# Notes
+!notes.json
+!main.typ
+
+# Site
+!index.html
+!style.css
+!script.js
+
+# GitHub Actions
+!deploy.yml
+
+# Keep dist ignored even with !*/
+dist/

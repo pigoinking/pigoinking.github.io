@@ -1,0 +1,191 @@
+/* === Base === */
+
+:root {
+  --fg: #1a1a1a;
+  --bg: #fdfdfd;
+  --muted: #666;
+  --border: #ddd;
+  --accent: #2563eb;
+  --chip-bg: #e8e8e8;
+  --chip-active: #2563eb;
+  --chip-active-fg: #fff;
+  --max-width: 48rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  color: var(--fg);
+  background: var(--bg);
+  line-height: 1.6;
+  margin: 0;
+  padding: 2rem 1rem;
+}
+
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* === Index page === */
+
+h1 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+#controls {
+  margin-bottom: 1.5rem;
+}
+
+#search {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 0.375rem;
+  outline: none;
+}
+
+#search:focus {
+  border-color: var(--accent);
+}
+
+#labels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.label-chip {
+  padding: 0.25rem 0.75rem;
+  font-size: 0.8rem;
+  border-radius: 999px;
+  background: var(--chip-bg);
+  border: none;
+  cursor: pointer;
+}
+
+.label-chip.active {
+  background: var(--chip-active);
+  color: var(--chip-active-fg);
+}
+
+#note-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#note-list li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+#note-list li:last-child {
+  border-bottom: none;
+}
+
+.note-title {
+  font-weight: 600;
+}
+
+.note-meta {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: 0.25rem;
+}
+
+.note-label {
+  display: inline-block;
+  padding: 0.1rem 0.5rem;
+  font-size: 0.75rem;
+  border-radius: 999px;
+  background: var(--chip-bg);
+  margin-right: 0.25rem;
+}
+
+/* === Typst note pages === */
+
+.note-nav {
+  max-width: var(--max-width);
+  margin: 0 auto 1.5rem;
+  font-size: 0.9rem;
+}
+
+/* Typst HTML output styles */
+body > h1,
+body > h2,
+body > h3,
+body > h4,
+body > h5,
+body > h6,
+body > p,
+body > ul,
+body > ol,
+body > table,
+body > figure,
+body > blockquote,
+body > pre {
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h2 { font-size: 1.3rem; margin-top: 2rem; }
+h3 { font-size: 1.15rem; margin-top: 1.5rem; }
+
+pre {
+  background: #f5f5f5;
+  padding: 1rem;
+  border-radius: 0.375rem;
+  overflow-x: auto;
+}
+
+code {
+  font-size: 0.9em;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: var(--max-width);
+}
+
+th, td {
+  border: 1px solid var(--border);
+  padding: 0.5rem;
+  text-align: left;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* === Responsive === */
+
+@media (max-width: 640px) {
+  body {
+    padding: 1rem 0.75rem;
+  }
+
+  h1 {
+    font-size: 1.25rem;
+  }
+}
