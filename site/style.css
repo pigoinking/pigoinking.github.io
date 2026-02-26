@@ -20,6 +20,7 @@
 
 body {
   font-family: system-ui, -apple-system, sans-serif;
+  font-size: 1.125rem;
   color: var(--fg);
   background: var(--bg);
   line-height: 1.6;
@@ -120,62 +121,10 @@ h1 {
   margin-right: 0.25rem;
 }
 
-/* === Typst note pages === */
+/* === Note page === */
 
 .note-nav {
-  max-width: var(--max-width);
-  margin: 0 auto 1.5rem;
   font-size: 0.9rem;
-}
-
-/* Typst HTML output styles */
-body > h1,
-body > h2,
-body > h3,
-body > h4,
-body > h5,
-body > h6,
-body > p,
-body > ul,
-body > ol,
-body > table,
-body > figure,
-body > blockquote,
-body > pre {
-  max-width: var(--max-width);
-  margin-left: auto;
-  margin-right: auto;
-}
-
-h2 { font-size: 1.3rem; margin-top: 2rem; }
-h3 { font-size: 1.15rem; margin-top: 1.5rem; }
-
-pre {
-  background: #f5f5f5;
-  padding: 1rem;
-  border-radius: 0.375rem;
-  overflow-x: auto;
-}
-
-code {
-  font-size: 0.9em;
-}
-
-table {
-  border-collapse: collapse;
-  width: 100%;
-  max-width: var(--max-width);
-}
-
-th, td {
-  border: 1px solid var(--border);
-  padding: 0.5rem;
-  text-align: left;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
 }
 
 /* === Responsive === */

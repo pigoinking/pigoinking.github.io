@@ -71,7 +71,7 @@
 
       const titleLink = document.createElement("a");
       titleLink.className = "note-title";
-      titleLink.href = `notes/${note.folder}/index.html`;
+      titleLink.href = `notes/${note.folder}/`;
       titleLink.textContent = note.title;
 
       const meta = document.createElement("div");
